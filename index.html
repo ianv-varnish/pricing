@@ -237,20 +237,20 @@ const PRODUCTS = [
       {
         name: "30-Day Trial", badge: "trial", price: "$0", period: "30 days, report mode",
         desc: "See what your policy would catch, on your own traffic, before anything is blocked.",
-        bullets: ["Report mode on every registry you enable", "OSV ruleset applied automatically", "Custom policy rules", "No payment details required"],
+        bullets: ["Report mode on every registry you enable", "OSV ruleset applied automatically", "50 active developers, evaluation scope", "No payment details required"],
         cta: { label: "Request your license", style: "ghost", href: "#" }
       },
       {
-        name: "Pro", badge: "paid", price: "$20,000", period: "per year, per 50 covered developers", featured: true,
-        desc: "Full request-time enforcement for production teams. Grows in blocks of 50 covered developers, with volume pricing by private offer.",
-        bullets: ["Enforce mode: allow, deny, hide, and quarantine", "OSV rules plus your own policy, as code in your Git", "Namespace isolation", "Audit log, Prometheus, and OpenTelemetry metrics", "Standard support, Premium available as an add-on"],
-        cta: { label: "Get a volume quote", style: "primary", href: "#" },
+        name: "Pro", badge: "paid", price: "Private offer", period: "per 50 covered developers", featured: true,
+        desc: "Full request-time enforcement for production teams. Grows in blocks of 50 covered developers with no scale ceiling, and the per-developer price declines as you grow.",
+        bullets: ["Enforce mode: allow, deny, hide, and quarantine", "OSV rules plus your own policy, as code in your Git", "Namespace isolation", "Audit log, Prometheus, and OpenTelemetry metrics", "Standard support: email, business hours"],
+        cta: { label: "Get a quote", style: "primary", href: "#" },
         marketplaces: [ { name: "AWS Marketplace", href: "https://aws.amazon.com/marketplace/pp/prodview-jjjc4vjfmz6ce?sr=0-1&ref_=ucaf&applicationId=AWSMPContessa" } ]
       },
       {
         name: "Enterprise", badge: "Custom pricing", price: "Contact us", period: "org-wide license",
-        desc: "Org-wide coverage on one order form, with pricing locked for the term. Purchasable from day one, before rollout.",
-        bullets: ["Everything in Pro", "Org-wide covered-developer scope", "Virtual Registry integration included", "Multi-environment and custom integration", "Premium support with TAM, Slack channel, and contractual SLA"],
+        desc: "Org-wide coverage on one order form, with the schedule locked for multi-year terms. Purchasable from day one, before rollout.",
+        bullets: ["Everything in Pro", "Org-wide covered-developer scope", "Virtual Registry integration included", "Multi-environment and custom integration", "Premium support: 24×7, Slack channel, and contractual SLA"],
         cta: { label: "Contact sales", style: "ghost", href: "#" }
       }
     ],
@@ -268,7 +268,7 @@ const PRODUCTS = [
     },
     featureGroups: [
       { title: "Coverage", rows: [
-        ["Covered developers", ["Evaluation", "Blocks of 50", "Org-wide"], "A covered developer is a unique identity that pulled packages through Artifact Firewall in the last 90 days."],
+        ["Covered developers", ["50 active", "Blocks of 50", "Org-wide"], "An identity that pulled packages through Artifact Firewall in the last 90 days, not every name on the org chart. Shared CI and service accounts are not counted."],
         ["Ecosystems enforced", ["4", "4", "4"], "npm, PyPI, Maven, and NuGet."],
         ["Registries fronted", ["Any", "Any", "Any"], "Vendor-neutral: deploys in front of Artifactory, Nexus, Cloudsmith, CodeArtifact, and more."],
       ]},
@@ -289,10 +289,10 @@ const PRODUCTS = [
       { title: "Support", rows: [
         ["Community support", ["yes", "yes", "yes"]],
         ["Standard support", ["no", "yes", "yes"]],
-        ["Premium support", ["no", "addon", "yes"], "Included at Enterprise, with TAM, Slack channel, and contractual SLA."],
+        ["Premium support", ["no", "no", "yes"], "24×7 with Slack channel and contractual SLA, included at Enterprise."],
       ]},
     ],
-    footnote: "Pro is listed on AWS Marketplace at the per-50-developer rate; volume pricing is available by private offer. A covered developer is a unique identity that pulled packages through Artifact Firewall in the trailing 90 days; dormant accounts and read-only users are not counted."
+    footnote: "Pro is sold by private offer, on AWS Marketplace and direct; pricing is per 50 covered developers and the per-developer rate declines with volume. A covered developer is an identity that pulled packages through Artifact Firewall in the last 90 days: dormant accounts, managers, read-only users, and shared CI or service accounts are not counted. Seats are declared at signature from your own 90-day contributor count, re-declared annually, and resize in both directions at renewal."
   },
 
   // ---------------------------------------------------------
@@ -309,54 +309,54 @@ const PRODUCTS = [
         cta: { label: "Install free", style: "ghost", href: "#" }
       },
       {
-        name: "Core", badge: "paid", price: "$30,000", period: "per year, one region", featured: true,
-        desc: "Start in one region, with any number of nodes and a 450 TB annual traffic envelope.",
-        bullets: ["Private and public registry caching", "Persistent and in-memory cache", "Fronts Artifactory, Nexus, Cloudsmith, GitHub, GitLab, and more", "OpenTelemetry metrics and tracing", "Email support"],
+        name: "Core", badge: "paid", price: "$30,000", period: "per year, one location", featured: true,
+        desc: "Start with one location, any number of nodes, and a 450 TB annual traffic envelope.",
+        bullets: ["Private and public registry caching", "Persistent and in-memory cache", "Fronts Artifactory, Nexus, Harbor, Cloudsmith, GitHub, GitLab, and more", "OpenTelemetry metrics and tracing", "Email support"],
         cta: { label: "Contact sales", style: "primary", href: "#" },
         marketplaces: [ { name: "AWS Marketplace", href: "https://aws.amazon.com/marketplace/pp/prodview-4jk4gcx5ijcuy?sr=0-3&ref_=ucaf&applicationId=AWSMPContessa" } ]
       },
       {
-        name: "Pro", badge: "paid", price: "Private offer", period: "three regions included",
-        desc: "For production estates: cache clustering and failover across regions, then add regions as the rollout grows.",
-        bullets: ["Everything in Core", "Cache clustering across nodes", "Failover between regions", "Traffic envelope pooled across regions", "Standard support, Premium available as an add-on"],
+        name: "Pro", badge: "paid", price: "Private offer", period: "three locations included",
+        desc: "For production estates: cache clustering and failover across locations, then add locations one at a time as the rollout grows.",
+        bullets: ["Everything in Core", "Cache clustering across nodes", "Failover between locations", "Traffic envelope pooled across locations", "Standard support, Premium available as an add-on"],
         cta: { label: "Contact sales", style: "primary", href: "#" }
       },
       {
         name: "Enterprise", badge: "Custom pricing", price: "Contact us", period: "custom scope",
-        desc: "Unlimited regions and traffic inside a named CI/CD and SDLC scope.",
-        bullets: ["Everything in Pro", "Unlimited regions and traffic", "Telemetry off by contract for air-gapped estates", "Custom configuration", "Premium support with TAM included"],
+        desc: "Unlimited locations and traffic inside a named CI/CD and SDLC scope.",
+        bullets: ["Everything in Pro", "Unlimited locations and traffic", "Telemetry off by contract for air-gapped estates", "Custom configuration", "Premium support with TAM included"],
         cta: { label: "Contact sales", style: "ghost", href: "#" }
       }
     ],
     partnerBanner: {
-      eyebrow: "Free trial",
-      title: "Try the full feature set, with Artifact Firewall, for 30 days",
-      exampleTag: "Self-service license, no sales call required",
-      desc: "One request unlocks every paid Virtual Registry feature plus Varnish Artifact Firewall, together, on your own infrastructure.",
+      eyebrow: "Evaluation",
+      title: "Prove it on your own traffic before you buy",
+      exampleTag: "30-to-60 day evaluation, full feature set",
+      desc: "A timed evaluation runs the complete feature set, from authenticated registries to clustering and failover, on your own infrastructure, so the latency and uptime case is proven on your data before the first order.",
       tracks: [
-        { title: "Full feature set", body: "Private registries, persistence, clustering, and programmability, unlocked for 30 days." },
-        { title: "Artifact Firewall bundled", body: "Request-time package verification on every registry you enable." },
-        { title: "Self-service", body: "License emailed on request. No payment details required." },
+        { title: "Full feature set", body: "Authenticated registries, persistence, clustering, and failover, enabled for the evaluation." },
+        { title: "Your workloads", body: "Deploy where your builds run and measure against your current registry path." },
+        { title: "Free forever, too", body: "The unlicensed version caches public registries and runs indefinitely, no evaluation needed." },
       ],
       featuresLabel: "How it works:",
-      features: "Request a license, deploy where your builds run, and measure the difference on your own traffic.",
-      cta: { label: "Request your license", href: "#" }
+      features: "Request an evaluation license, deploy, and compare the numbers.",
+      cta: { label: "Request an evaluation", href: "#" }
     },
     featureGroups: [
       { title: "Scale", rows: [
-        ["Regions", ["—", "1", "3, then +1 per add-on", "Unlimited"], "A region is a place you serve artifacts from: a cloud region, a data center, or a site. Run any number of nodes inside it."],
-        ["Annual traffic envelope", ["—", "450 TB", "1,350 TB, +450 per region", "No cap"], "Bytes delivered to your clients over a trailing 12 months. Uploads and transfers between your own regions are not counted."],
+        ["Locations", ["—", "1, exactly", "3, then +1 at a time", "Unlimited"], "A location is one Virtual Registry deployment serving one site: a data centre, a cloud region, or an office. Nodes, pods, and clusters inside it are never counted."],
+        ["Annual traffic envelope", ["—", "450 TB", "1,350 TB, +450 per location", "No cap"], "Bytes delivered to your clients over a trailing 12 months, all locations combined. Uploads, transfers between your own locations, and cache-warming prefetch are not counted."],
         ["Cache clustering", ["no", "no", "yes", "yes"], "Nodes share one logical cache, so an artifact is fetched from upstream once and served to the rest."],
-        ["Multi-region failover", ["no", "no", "yes", "yes"], "Service continues from another region if one goes down."],
+        ["Failover between locations", ["no", "no", "yes", "yes"], "Service continues from another location if one goes down."],
       ]},
       { title: "Registry features", rows: [
         ["Public registry cache", ["yes", "yes", "yes", "yes"]],
         ["Private registry caching", ["no", "yes", "yes", "yes"]],
-        ["Platforms fronted", ["Public only", "Unlimited", "Unlimited", "Unlimited"], "Artifactory, Nexus, Cloudsmith, GitHub, GitLab, and more, with no limit on how many."],
+        ["Platforms fronted", ["Public only", "Unlimited", "Unlimited", "Unlimited"], "Artifactory, Nexus, Harbor, Cloudsmith, GitHub, GitLab, and more, with no limit on how many."],
         ["End-to-end TLS", ["yes", "yes", "yes", "yes"]],
         ["In-memory cache", ["yes", "yes", "yes", "yes"]],
         ["Persistent caching", ["no", "yes", "yes", "yes"]],
-        ["Programmability", ["no", "yes", "yes", "yes"]],
+        ["Custom VCL per registry", ["no", "no", "no", "yes"], "Edge logic tailored per registry, the customization Enterprise carries."],
       ]},
       { title: "Observability", rows: [
         ["OpenTelemetry metrics", ["yes", "yes", "yes", "yes"]],
@@ -370,7 +370,7 @@ const PRODUCTS = [
         ["Premium support", ["no", "no", "addon", "yes"], "Included at Enterprise, with TAM, Slack channel, and contractual SLA."],
       ]},
     ],
-    footnote: "Core is licensed per region: a second region is a second Core, each with its own 450 TB envelope. Pro pools regions and traffic, adds clustering and failover, and grows one region at a time by private offer."
+    footnote: "A location is one Virtual Registry deployment serving one site; nodes and clusters inside it are never counted. Core is licensed per location: a second location is a second Core, each with its own 450 TB envelope, never pooled. Pro pools locations and traffic, adds clustering and failover, and grows one location at a time by private offer."
   },
 
  // ---------------------------------------------------------
