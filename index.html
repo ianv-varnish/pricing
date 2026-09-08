@@ -514,20 +514,6 @@ const PRODUCTS = [
 
   // ---------------------------------------------------------
   {
-    id: "ai-accelerator",
-    name: "AI Accelerator",
-    tagline: "Keep GPUs fed and reduce storage bottlenecks by caching data close to compute.",
-    source: "https://www.varnish-software.com/products/ai-data-infrastructure/varnish-ai-accelerator/",
-    tiers: [
-      { name: "Starter", badge: "", price: "", period: "", desc: "", bullets: [], cta: null },
-      { name: "Growth", badge: "", price: "", period: "", desc: "", bullets: [], cta: null },
-      { name: "Enterprise", badge: "", price: "", period: "", desc: "", bullets: [], cta: null },
-    ],
-    featureGroups: []
-  },
-
-  // ---------------------------------------------------------
-  {
     id: "enterprise",
     name: "Varnish Enterprise",
     tagline: "The programmable edge for web, video, and platform teams.",
@@ -743,7 +729,7 @@ function renderPartnerBanner(b){
   return `<div class="partner-banner">
     <div class="eyebrow">${b.eyebrow}</div>
     <h3>${b.title}</h3>
-    <div class="example-tag">${b.exampleTag}</div>
+    ${b.exampleTag ? `<div class="example-tag">${b.exampleTag}</div>` : ''}
     <p class="desc">${b.desc}</p>
     <div class="partner-tracks">
       ${b.tracks.map(t => `<div class="partner-track"><h4>${t.title}</h4><p>${t.body}</p></div>`).join('')}
