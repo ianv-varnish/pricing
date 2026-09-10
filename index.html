@@ -303,10 +303,10 @@ const PRODUCTS = [
     source: "https://www.varnish-software.com/products/software-supply-chain/varnish-virtual-registry/",
     tiers: [
       {
-        name: "Free", badge: "free", price: "$0", period: "runs indefinitely",
-        desc: "Public registry caching with no license required.",
-        bullets: ["Public registry cache", "End-to-end TLS", "In-memory cache", "OpenTelemetry metrics"],
-        cta: { label: "Install free", style: "ghost", href: "#" }
+        name: "30-Day Trial", badge: "trial", price: "$0", period: "30 days, full Pro feature set",
+        desc: "Deploy the complete Pro feature set on your own infrastructure, no payment details required.",
+        bullets: ["Private and public registry caching, unlocked for the trial", "Cache clustering and failover across locations", "OpenTelemetry metrics and tracing", "No payment details required"],
+        cta: { label: "Request your license", style: "ghost", href: "#" }
       },
       {
         name: "Core", badge: "paid", price: "$30,000", period: "per year, one location", featured: true,
@@ -331,41 +331,41 @@ const PRODUCTS = [
     partnerBanner: {
       eyebrow: "Evaluation",
       title: "Prove it on your own traffic before you buy",
-      exampleTag: "30-to-60 day evaluation, full feature set",
-      desc: "A timed evaluation runs the complete feature set, from authenticated registries to clustering and failover, on your own infrastructure, so the latency and uptime case is proven on your data before the first order.",
+      exampleTag: "30-day trial, full Pro feature set",
+      desc: "The free 30-day trial runs the complete Pro feature set, from private registries to clustering and failover, on your own infrastructure, so the latency and uptime case is proven on your data before the first order.",
       tracks: [
-        { title: "Full feature set", body: "Authenticated registries, persistence, clustering, and failover, enabled for the evaluation." },
+        { title: "Full feature set", body: "Private registries, persistence, clustering, and failover, all unlocked for the trial." },
         { title: "Your workloads", body: "Deploy where your builds run and measure against your current registry path." },
-        { title: "Free forever, too", body: "The unlicensed version caches public registries and runs indefinitely, no evaluation needed." },
+        { title: "No commitment", body: "No payment details required to start, and nothing keeps running after day 30 unless you convert." },
       ],
       featuresLabel: "How it works:",
-      features: "Request an evaluation license, deploy, and compare the numbers.",
-      cta: { label: "Request an evaluation", href: "#" }
+      features: "Request your trial license, deploy, and compare the numbers.",
+      cta: { label: "Start your free trial", href: "#" }
     },
     featureGroups: [
       { title: "Scale", rows: [
-        ["Locations", ["—", "1, exactly", "3, then +1 at a time", "Unlimited"], "A location is one Virtual Registry deployment serving one site: a data centre, a cloud region, or an office. Nodes, pods, and clusters inside it are never counted."],
+        ["Locations", ["1, trial only", "1, exactly", "3, then +1 at a time", "Unlimited"], "A location is one Virtual Registry deployment serving one site: a data centre, a cloud region, or an office. Nodes, pods, and clusters inside it are never counted."],
         ["Annual traffic envelope", ["—", "450 TB", "1,350 TB, +450 per location", "No cap"], "Bytes delivered to your clients over a trailing 12 months, all locations combined. Uploads, transfers between your own locations, and cache-warming prefetch are not counted."],
-        ["Cache clustering", ["no", "no", "yes", "yes"], "Nodes share one logical cache, so an artifact is fetched from upstream once and served to the rest."],
-        ["Failover between locations", ["no", "no", "yes", "yes"], "Service continues from another location if one goes down."],
+        ["Cache clustering", ["yes", "no", "yes", "yes"], "Nodes share one logical cache, so an artifact is fetched from upstream once and served to the rest."],
+        ["Failover between locations", ["yes", "no", "yes", "yes"], "Service continues from another location if one goes down."],
       ]},
       { title: "Registry features", rows: [
         ["Public registry cache", ["yes", "yes", "yes", "yes"]],
-        ["Private registry caching", ["no", "yes", "yes", "yes"]],
-        ["Platforms fronted", ["Public only", "Unlimited", "Unlimited", "Unlimited"], "Artifactory, Nexus, Harbor, Cloudsmith, GitHub, GitLab, and more, with no limit on how many."],
+        ["Private registry caching", ["yes", "yes", "yes", "yes"]],
+        ["Platforms fronted", ["Unlimited", "Unlimited", "Unlimited", "Unlimited"], "Artifactory, Nexus, Harbor, Cloudsmith, GitHub, GitLab, and more, with no limit on how many."],
         ["End-to-end TLS", ["yes", "yes", "yes", "yes"]],
         ["In-memory cache", ["yes", "yes", "yes", "yes"]],
-        ["Persistent caching", ["no", "yes", "yes", "yes"]],
+        ["Persistent caching", ["yes", "yes", "yes", "yes"]],
         ["Custom VCL per registry", ["no", "no", "no", "yes"], "Edge logic tailored per registry, the customization Enterprise carries."],
       ]},
       { title: "Observability", rows: [
         ["OpenTelemetry metrics", ["yes", "yes", "yes", "yes"]],
-        ["OpenTelemetry tracing", ["no", "yes", "yes", "yes"]],
+        ["OpenTelemetry tracing", ["yes", "yes", "yes", "yes"]],
         ["Telemetry-off, air-gapped operation", ["no", "no", "no", "yes"], "Telemetry may be disabled by contract for air-gapped estates."],
       ]},
       { title: "Support", rows: [
         ["Community support", ["yes", "yes", "yes", "yes"]],
-        ["Email support", ["no", "yes", "yes", "yes"]],
+        ["Email support", ["yes", "yes", "yes", "yes"]],
         ["Standard support", ["no", "no", "yes", "yes"]],
         ["Premium support", ["no", "no", "addon", "yes"], "Included at Enterprise, with TAM, Slack channel, and contractual SLA."],
       ]},
