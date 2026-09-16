@@ -62,11 +62,6 @@
   .product-head p.tagline{font-size:15px; color:var(--gray-70); margin:0; max-width:640px; line-height:1.5;}
   .source-note{font-family:var(--font-mono); font-size:11.5px; color:var(--gray-50); margin-top:10px;}
   .source-note a{color:var(--blue-70); text-decoration:none;}
-  .anchor-note{font-family:var(--font-mono); font-size:11px; color:var(--gray-40); margin-top:4px;}
-  .anchor-note button{
-    font-family:var(--font-mono); font-size:11px; color:var(--blue-70); background:none; border:none;
-    padding:0; cursor:pointer; text-decoration:underline;
-  }
 
   /* ---------- Skeleton (content-pending) primitives ---------- */
   @keyframes pulse{0%,100%{opacity:.5} 50%{opacity:.95}}
@@ -217,17 +212,7 @@
 <main id="main"></main>
 
 <script>
-/* ============================================================
-   DATA MODEL
-   Fields left as an empty string / null / empty array are
-   genuinely unconfirmed — the renderer turns those into a
-   blank placeholder rather than printing anything.
-   `source` is a single URL string pointing at the product's
-   official page (shown as "Product page →" under the tagline).
-   ============================================================ */
 const PRODUCTS = [
-
-  // ---------------------------------------------------------
   {
     id: "artifact-firewall",
     name: "Artifact Firewall",
@@ -238,20 +223,20 @@ const PRODUCTS = [
         name: "30-Day Trial", badge: "trial", price: "$0", period: "30 days, report mode",
         desc: "See what your policy would catch, on your own traffic, before anything is blocked.",
         bullets: ["Report mode on every registry you enable", "OSV ruleset applied automatically", "50 active developers, evaluation scope", "No payment details required"],
-        cta: { label: "Request your license", style: "ghost", href: "#" }
+        cta: { label: "Request your license", style: "ghost", href: "https://www.varnish-software.com/products/software-supply-chain/varnish-virtual-registry/getting-started/" }
       },
       {
         name: "Pro", badge: "paid", price: "Private offer", period: "per 50 covered developers", featured: true,
         desc: "Full request-time enforcement for production teams. Grows in blocks of 50 covered developers with no scale ceiling, and the per-developer price declines as you grow.",
         bullets: ["Enforce mode: allow, deny, hide, and quarantine", "OSV rules plus your own policy, as code in your Git", "Namespace isolation", "Audit log, Prometheus, and OpenTelemetry metrics", "Standard support: email, business hours"],
-        cta: { label: "Get a quote", style: "primary", href: "#" },
+        cta: { label: "Get a quote", style: "primary", href: "https://www.varnish-software.com/talk-to-an-expert/" },
         marketplaces: [ { name: "AWS Marketplace", href: "https://aws.amazon.com/marketplace/pp/prodview-jjjc4vjfmz6ce?sr=0-1&ref_=ucaf&applicationId=AWSMPContessa" } ]
       },
       {
         name: "Enterprise", badge: "Custom pricing", price: "Contact us", period: "org-wide license",
         desc: "Org-wide coverage on one order form, with the schedule locked for multi-year terms. Purchasable from day one, before rollout.",
         bullets: ["Everything in Pro", "Org-wide covered-developer scope", "Virtual Registry integration included", "Multi-environment and custom integration", "Premium support: 24×7, Slack channel, and contractual SLA"],
-        cta: { label: "Contact sales", style: "ghost", href: "#" }
+        cta: { label: "Contact sales", style: "ghost", href: "https://www.varnish-software.com/talk-to-an-expert/" }
       }
     ],
     partnerBanner: {
@@ -294,8 +279,6 @@ const PRODUCTS = [
     ],
     footnote: "Pro is sold by private offer, on AWS Marketplace and direct; pricing is per 50 covered developers and the per-developer rate declines with volume. A covered developer is an identity that pulled packages through Artifact Firewall in the last 90 days: dormant accounts, managers, read-only users, and shared CI or service accounts are not counted. Seats are declared at signature from your own 90-day contributor count, re-declared annually, and resize in both directions at renewal."
   },
-
-  // ---------------------------------------------------------
   {
     id: "virtual-registry",
     name: "Virtual Registry",
@@ -306,26 +289,26 @@ const PRODUCTS = [
         name: "30-Day Trial", badge: "trial", price: "$0", period: "30 days, full Pro feature set",
         desc: "Deploy the complete Pro feature set on your own infrastructure, no payment details required.",
         bullets: ["Private and public registry caching, unlocked for the trial", "Cache clustering and failover across locations", "OpenTelemetry metrics and tracing", "No payment details required"],
-        cta: { label: "Request your license", style: "ghost", href: "#" }
+        cta: { label: "Request your license", style: "ghost", href: "https://www.varnish-software.com/products/software-supply-chain/varnish-virtual-registry/getting-started/" }
       },
       {
         name: "Core", badge: "paid", price: "$30,000", period: "per year, one location", featured: true,
         desc: "Start with one location, any number of nodes, and a 450 TB annual traffic envelope.",
         bullets: ["Private and public registry caching", "Persistent and in-memory cache", "Fronts Artifactory, Nexus, Harbor, Cloudsmith, GitHub, GitLab, and more", "OpenTelemetry metrics and tracing", "Email support"],
-        cta: { label: "Contact sales", style: "primary", href: "#" },
+        cta: { label: "Contact sales", style: "primary", href: "https://www.varnish-software.com/talk-to-an-expert/" },
         marketplaces: [ { name: "AWS Marketplace", href: "https://aws.amazon.com/marketplace/pp/prodview-4jk4gcx5ijcuy?sr=0-3&ref_=ucaf&applicationId=AWSMPContessa" } ]
       },
       {
         name: "Pro", badge: "paid", price: "Private offer", period: "three locations included",
         desc: "For production estates: cache clustering and failover across locations, then add locations one at a time as the rollout grows.",
         bullets: ["Everything in Core", "Cache clustering across nodes", "Failover between locations", "Traffic envelope pooled across locations", "Standard support, Premium available as an add-on"],
-        cta: { label: "Contact sales", style: "primary", href: "#" }
+        cta: { label: "Contact sales", style: "primary", href: "https://www.varnish-software.com/talk-to-an-expert/" }
       },
       {
         name: "Enterprise", badge: "Custom pricing", price: "Contact us", period: "custom scope",
         desc: "Unlimited locations and traffic inside a named CI/CD and SDLC scope.",
         bullets: ["Everything in Pro", "Unlimited locations and traffic", "Telemetry off by contract for air-gapped estates", "Custom configuration", "Premium support with TAM included"],
-        cta: { label: "Contact sales", style: "ghost", href: "#" }
+        cta: { label: "Contact sales", style: "ghost", href: "https://www.varnish-software.com/talk-to-an-expert/" }
       }
     ],
     partnerBanner: {
@@ -340,7 +323,7 @@ const PRODUCTS = [
       ],
       featuresLabel: "How it works:",
       features: "Request your trial license, deploy, and compare the numbers.",
-      cta: { label: "Start your free trial", href: "#" }
+      cta: { label: "Start your free trial", href: "https://www.varnish-software.com/products/software-supply-chain/varnish-virtual-registry/getting-started/" }
     },
     featureGroups: [
       { title: "Scale", rows: [
@@ -372,8 +355,6 @@ const PRODUCTS = [
     ],
     footnote: "A location is one Virtual Registry deployment serving one site; nodes and clusters inside it are never counted. Core is licensed per location: a second location is a second Core, each with its own 450 TB envelope, never pooled. Pro pools locations and traffic, adds clustering and failover, and grows one location at a time by private offer."
   },
-
- // ---------------------------------------------------------
   {
     id: "ora-streaming",
     name: "Ora Streaming",
@@ -387,7 +368,7 @@ const PRODUCTS = [
           "Dedicated RAM, CPU & network capacity", "100+ global PoPs on Tier-1 networks", "Zero egress fees",
           "24/7/365 managed ops & NOC support", "Security, edge logic & free edge compute", "Real-time observability & tuning"
         ],
-        cta: { label: "Get indicative pricing", style: "primary", href: "https://orastreaming.com/#contact_us", compact: true }
+        cta: { label: "Get indicative pricing", style: "primary", href: "https://www.varnish-software.com/talk-to-an-expert/", compact: true }
       }
     ],
     partnerBanner: {
@@ -402,117 +383,113 @@ const PRODUCTS = [
       ],
       featuresLabel: "Timeline:",
       features: "Typically 6–12 months from kickoff to full transfer, depending on your team's pace.",
-      cta: { label: "Talk to us about Build-Operate-Transfer", href: "https://orastreaming.com/#contact_us" }
+      cta: { label: "Talk to us about Build-Operate-Transfer", href: "https://www.varnish-software.com/talk-to-an-expert/" }
     },
     featureGroups: []
   },
- 
-// ---------------------------------------------------------
-{
-  id: "cdn",
-  name: "Varnish CDN",
-  tagline: "European-hosted CDN with predictable performance and full data locality.",
-  source: "https://www.varnish-software.com/products/streaming-content-delivery/varnish-cdn/",
-  tiers: [
-    {
-      name: "Developer", badge: "trial", price: "€0", period: "1 month free trial",
-      desc: "For developers who want to explore and test the Varnish CDN experience.",
-      bullets: ["100 GB included + €0.03/GB overage", "A sovereign CDN", "Hotlink protection", "Bot verification", "Managed WAF — Basic", "Rate limiting — Standard", "Managed SSL", "No credit card required", { sub: "Rules" }, "10 custom cache rules", { sub: "Support" }, "FAQ, documentation"],
-      cta: { label: "Start for free", style: "ghost", href: "#" }
-    },
-    {
-      name: "Growth", badge: "paid", price: "€69", period: "per month", featured: true,
-      desc: "For non-essential static assets and cost-conscious growing businesses.",
-      bullets: ["100 GB included + €0.03/GB overage", "Everything in Developer, plus:", "WebSocket proxy", "GeoIP blocklist", "Managed WAF — Standard", "Bot protection", "Image optimization", "Image transformation (1000)", { sub: "Rules" }, "100 custom cache rules", { sub: "Support" }, "FAQ, documentation, ticket"],
-      cta: { label: "Get started", style: "primary", href: "#" }
-    },
-    {
-      name: "Custom Contract", badge: "paid", price: "Contact sales", period: "per quote",
-      desc: "Security-rich bundle for the most demanding business-critical operations.",
-      bullets: ["Everything in Growth, plus:", "True client IP headers", "Managed WAF — Advanced", "Image transformation (10,000)", "Large uploads", "Log export", { sub: "Rules" }, "2000+ custom cache rules", { sub: "Support" }, "FAQ, docs, ticket, chat (per quote)"],
-      cta: { label: "Contact sales", style: "ghost", href: "#" }
-    }
-  ],
-  partnerBanner: {
-    eyebrow: "Partner Program",
-    title: "Deploy Varnish CDN on your own infrastructure",
-    exampleTag: "Varnish CDN in a Box",
-    source: "https://www.varnish-software.com/products/streaming-content-delivery/varnish-cdn-in-a-box/",
-    desc: "Resell CDN services under your brand or gain the benefits of a managed private CDN.",
-    tracks: [
-      { title: "Resell CDN", body: "Sell CDN services to your own customers with a white-label Varnish CDN deployment." },
-      { title: "Private managed CDN", body: "Run a private CDN on your own infrastructure, managed by Varnish." },
+  {
+    id: "cdn",
+    name: "Varnish CDN",
+    tagline: "European-hosted CDN with predictable performance and full data locality.",
+    source: "https://www.varnish-software.com/products/streaming-content-delivery/varnish-cdn/",
+    tiers: [
+      {
+        name: "Developer", badge: "trial", price: "€0", period: "1 month free trial",
+        desc: "For developers who want to explore and test the Varnish CDN experience.",
+        bullets: ["100 GB included + €0.03/GB overage", "A sovereign CDN", "Hotlink protection", "Bot verification", "Managed WAF — Basic", "Rate limiting — Standard", "Managed SSL", "No credit card required", { sub: "Rules" }, "10 custom cache rules", { sub: "Support" }, "FAQ, documentation"],
+        cta: { label: "Start for free", style: "ghost", href: "https://console.varnish-cdn.com/login" }
+      },
+      {
+        name: "Growth", badge: "paid", price: "€69", period: "per month", featured: true,
+        desc: "For non-essential static assets and cost-conscious growing businesses.",
+        bullets: ["100 GB included + €0.03/GB overage", "Everything in Developer, plus:", "WebSocket proxy", "GeoIP blocklist", "Managed WAF — Standard", "Bot protection", "Image optimization", "Image transformation (1000)", { sub: "Rules" }, "100 custom cache rules", { sub: "Support" }, "FAQ, documentation, ticket"],
+        cta: { label: "Get started", style: "primary", href: "https://console.varnish-cdn.com/login" }
+      },
+      {
+        name: "Custom Contract", badge: "paid", price: "Contact sales", period: "per quote",
+        desc: "Security-rich bundle for the most demanding business-critical operations.",
+        bullets: ["Everything in Growth, plus:", "True client IP headers", "Managed WAF — Advanced", "Image transformation (10,000)", "Large uploads", "Log export", { sub: "Rules" }, "2000+ custom cache rules", { sub: "Support" }, "FAQ, docs, ticket, chat (per quote)"],
+        cta: { label: "Contact sales", style: "ghost", href: "https://www.varnish-software.com/talk-to-an-expert/" }
+      }
     ],
-    features: "All the capabilities of Varnish CDN, plus partner essentials like SSO, billing, and multi-tenancy.",
-    cta: { label: "Contact partner team", href: "#" }
+    partnerBanner: {
+      eyebrow: "Partner Program",
+      title: "Deploy Varnish CDN on your own infrastructure",
+      exampleTag: "Varnish CDN in a Box",
+      source: "https://www.varnish-software.com/products/streaming-content-delivery/varnish-cdn-in-a-box/",
+      desc: "Resell CDN services under your brand or gain the benefits of a managed private CDN.",
+      tracks: [
+        { title: "Resell CDN", body: "Sell CDN services to your own customers with a white-label Varnish CDN deployment." },
+        { title: "Private managed CDN", body: "Run a private CDN on your own infrastructure, managed by Varnish." },
+      ],
+      features: "All the capabilities of Varnish CDN, plus partner essentials like SSO, billing, and multi-tenancy.",
+      cta: { label: "Contact partner team", href: "https://www.varnish-software.com/become-a-partner/" }
+    },
+    featureGroups: [
+      { title: "Content delivery", rows: [
+        ["Number of domains included", ["1","1","Per quote"]],
+        ["GB included in monthly fee", ["100","100","Per quote"]],
+        ["GB overage price", ["€0.03","€0.03","Per quote"]],
+        ["Content delivery network", ["yes","yes","yes"], "Serve more customers faster by distributing your static content across our datacenters world wide."],
+        ["Always online", ["yes","yes","yes"], "Varnish CDN ensures your website can stay online and available for visitors, even when your server goes down."],
+        ["Global GeoIP routing", ["yes","yes","yes"], "Always direct your end-users to our nearest datacenter for optimal performance."],
+        ["Cache invalidation", ["5/min","1/sec","20+/sec"], "Instantly purge a file, a subpath, or your entire cache."],
+        ["Cache invalidation by tag", ["yes","yes","yes"], "Assign tags to your content so that you can quickly target and purge specific content from the cache with a single request."],
+        ["Load balancing", ["yes","yes","yes"], "Serve your content from multiple load balanced backends."],
+        ["IPv6", ["yes","yes","yes"], "Full IPv6 support."],
+        ["HTTP/2", ["yes","yes","yes"], "Full HTTP/2 support between client and Varnish CDN."],
+        ["WebSocket proxy", ["no","yes","yes"], "Proxy WebSocket traffic directly to your origin for €0.4/million minutes."],
+        ["Minimum cache TTL", ["2h","1h","1s"], "Varnish CDN respects all caching headers unless you choose to overwrite them, in which case a minimum cache TTL is applied."],
+        ["Wild card domains", ["yes","yes","yes"], "Serve wildcard domains (*.yourpage.com) as a single service."],
+        ["Per-path routing", ["yes","yes","yes"], "Route different URL paths on the same service to different origins."],
+      ]},
+      { title: "Customization", rows: [
+        ["Manage cookies", ["yes","yes","yes"], "Choose how your cache handles cookies. Bypass the cache or remove unwanted cookies for improved cache hits."],
+        ["Manage headers", ["yes","yes","yes"], "Add or remove headers to your requests, or bypass cache on authorization headers."],
+        ["Manage query parameters", ["yes","yes","yes"], "Choose to sort or remove query parameters to improve cache hit rates."],
+        ["Custom cache rules", ["10","100","2000+"], "Setting your default rules is always included. With custom cache rules, alter your CDN's behaviour when serving different content."],
+        ["Max upload size", ["100 MB","100 MB","Custom"], "Maximum allowed size of uploads by end-users to your site."],
+        ["True client IP headers", ["no","no","yes"], "Add headers telling your backend where the request originated from."],
+        ["WordPress / Drupal / Magento one-click config", ["yes","yes","yes"], "Configure your CDN to be optimised for WordPress, Magento, or Drupal with a single click."],
+      ]},
+      { title: "Image handling", rows: [
+        ["Image optimization", ["no","yes","yes"], "Lossless image optimization to reduce image size by up to 34% without perceived loss in quality."],
+        ["Image transformations / mo", ["no","1000","10,000"], "Dynamically transform your images to optimize the size for the target page and screen. €0.5 per additional 1000 transformations."],
+      ]},
+      { title: "Security", rows: [
+        ["Hotlink protection", ["yes","yes","yes"], "Protect your assets from being shown on other sites."],
+        ["GeoIP blocklist", ["no","yes","yes"], "Block traffic from ASNs or specific countries."],
+        ["Bot verification", ["yes","yes","yes"], "Confirm the identities of permitted benevolent bots such as those used by search engines."],
+        ["Bot protection", ["no","Per quote","Per quote"], "Protect your application from malicious bots."],
+        ["DDoS protection", ["no","no","yes"], "Network & Transport layer (3 and 4) DDoS protection provided."],
+        ["Managed WAF — Standard", ["no","no","yes"], "Application layer (7) DDoS protection provided via Open Web Application Security Project (OWASP) ruleset."],
+        ["Managed WAF — Advanced", ["no","no","Per quote"], "Advanced Web Application Firewall (WAF) ruleset provided in cooperation with Atomicorp."],
+        ["Rate limiting", ["yes","yes","yes"], "Rate limit your customers globally based on IP."],
+        ["Managed SSL", ["yes","yes","yes"], "Keep your current SSL configuration or let Varnish CDN handle SSL termination for you."],
+        ["Bring your own certificate", ["no","no","yes"], "Already managing SSL certificates? Upload your own."],
+      ]},
+      { title: "Compliance", rows: [
+        ["Data sovereignty (EU)", ["yes","yes","yes"], "Varnish Software is subject to and compliant with NIS2 regulation."],
+        ["Avoids US CLOUD Act exposure", ["yes","yes","yes"], "Varnish CDN is uniquely designed to be untouched by the US CLOUD Act."],
+        ["ISO 27001", ["yes","yes","yes"], "Varnish Software AB is certified ISO 27001 compliant."],
+        ["ISO 9001", ["yes","yes","yes"], "Varnish Software AB is certified ISO 9001 compliant."],
+        ["PCI DSS 4.0 Level 1", ["yes","yes","yes"], "Payments to Varnish CDN are PCI DSS 4.0 Level 1 compliant."],
+      ]},
+      { title: "Dashboard", rows: [
+        ["Role-based access control", ["yes","yes","yes"], "Manage your users with administrative, developer, finance and read-only roles."],
+        ["API access", ["yes","yes","yes"], "An API is available for autonomous deployment and management of your services."],
+        ["Metrics — max resolution", ["1h","15m","1m"], "View your metrics with improved granularity."],
+        ["Metrics — history retained", ["6h","24h","30d"], "View an increasingly long history of metrics for your services."],
+        ["Log export", ["no","no","yes"], "Export your logs and metrics."],
+      ]},
+      { title: "Support", rows: [
+        ["Documentation", ["yes","yes","yes"]],
+        ["Ticket support", ["no","yes","yes"]],
+        ["Response time", ["—","16h","4h"], "During business hours and business days."],
+        ["Chat support", ["no","no","Per quote"]],
+      ]},
+    ],
   },
-  featureGroups: [
-    { title: "Content delivery", rows: [
-      ["Number of domains included", ["1","1","Per quote"]],
-      ["GB included in monthly fee", ["100","100","Per quote"]],
-      ["GB overage price", ["€0.03","€0.03","Per quote"]],
-      ["Content delivery network", ["yes","yes","yes"], "Serve more customers faster by distributing your static content across our datacenters world wide."],
-      ["Always online", ["yes","yes","yes"], "Varnish CDN ensures your website can stay online and available for visitors, even when your server goes down."],
-      ["Global GeoIP routing", ["yes","yes","yes"], "Always direct your end-users to our nearest datacenter for optimal performance."],
-      ["Cache invalidation", ["5/min","1/sec","20+/sec"], "Instantly purge a file, a subpath, or your entire cache."],
-      ["Cache invalidation by tag", ["yes","yes","yes"], "Assign tags to your content so that you can quickly target and purge specific content from the cache with a single request."],
-      ["Load balancing", ["yes","yes","yes"], "Serve your content from multiple load balanced backends."],
-      ["IPv6", ["yes","yes","yes"], "Full IPv6 support."],
-      ["HTTP/2", ["yes","yes","yes"], "Full HTTP/2 support between client and Varnish CDN."],
-      ["WebSocket proxy", ["no","yes","yes"], "Proxy WebSocket traffic directly to your origin for €0.4/million minutes."],
-      ["Minimum cache TTL", ["2h","1h","1s"], "Varnish CDN respects all caching headers unless you choose to overwrite them, in which case a minimum cache TTL is applied."],
-      ["Wild card domains", ["yes","yes","yes"], "Serve wildcard domains (*.yourpage.com) as a single service."],
-      ["Per-path routing", ["yes","yes","yes"], "Route different URL paths on the same service to different origins."],
-    ]},
-    { title: "Customization", rows: [
-      ["Manage cookies", ["yes","yes","yes"], "Choose how your cache handles cookies. Bypass the cache or remove unwanted cookies for improved cache hits."],
-      ["Manage headers", ["yes","yes","yes"], "Add or remove headers to your requests, or bypass cache on authorization headers."],
-      ["Manage query parameters", ["yes","yes","yes"], "Choose to sort or remove query parameters to improve cache hit rates."],
-      ["Custom cache rules", ["10","100","2000+"], "Setting your default rules is always included. With custom cache rules, alter your CDN's behaviour when serving different content."],
-      ["Max upload size", ["100 MB","100 MB","Custom"], "Maximum allowed size of uploads by end-users to your site."],
-      ["True client IP headers", ["no","no","yes"], "Add headers telling your backend where the request originated from."],
-      ["WordPress / Drupal / Magento one-click config", ["yes","yes","yes"], "Configure your CDN to be optimised for WordPress, Magento, or Drupal with a single click."],
-    ]},
-    { title: "Image handling", rows: [
-      ["Image optimization", ["no","yes","yes"], "Lossless image optimization to reduce image size by up to 34% without perceived loss in quality."],
-      ["Image transformations / mo", ["no","1000","10,000"], "Dynamically transform your images to optimize the size for the target page and screen. €0.5 per additional 1000 transformations."],
-    ]},
-    { title: "Security", rows: [
-      ["Hotlink protection", ["yes","yes","yes"], "Protect your assets from being shown on other sites."],
-      ["GeoIP blocklist", ["no","yes","yes"], "Block traffic from ASNs or specific countries."],
-      ["Bot verification", ["yes","yes","yes"], "Confirm the identities of permitted benevolent bots such as those used by search engines."],
-      ["Bot protection", ["no","Per quote","Per quote"], "Protect your application from malicious bots."],
-      ["DDoS protection", ["no","no","yes"], "Network & Transport layer (3 and 4) DDoS protection provided."],
-      ["Managed WAF — Standard", ["no","no","yes"], "Application layer (7) DDoS protection provided via Open Web Application Security Project (OWASP) ruleset."],
-      ["Managed WAF — Advanced", ["no","no","Per quote"], "Advanced Web Application Firewall (WAF) ruleset provided in cooperation with Atomicorp."],
-      ["Rate limiting", ["yes","yes","yes"], "Rate limit your customers globally based on IP."],
-      ["Managed SSL", ["yes","yes","yes"], "Keep your current SSL configuration or let Varnish CDN handle SSL termination for you."],
-      ["Bring your own certificate", ["no","no","yes"], "Already managing SSL certificates? Upload your own."],
-    ]},
-    { title: "Compliance", rows: [
-      ["Data sovereignty (EU)", ["yes","yes","yes"], "Varnish Software is subject to and compliant with NIS2 regulation."],
-      ["Avoids US CLOUD Act exposure", ["yes","yes","yes"], "Varnish CDN is uniquely designed to be untouched by the US CLOUD Act."],
-      ["ISO 27001", ["yes","yes","yes"], "Varnish Software AB is certified ISO 27001 compliant."],
-      ["ISO 9001", ["yes","yes","yes"], "Varnish Software AB is certified ISO 9001 compliant."],
-      ["PCI DSS 4.0 Level 1", ["yes","yes","yes"], "Payments to Varnish CDN are PCI DSS 4.0 Level 1 compliant."],
-    ]},
-    { title: "Dashboard", rows: [
-      ["Role-based access control", ["yes","yes","yes"], "Manage your users with administrative, developer, finance and read-only roles."],
-      ["API access", ["yes","yes","yes"], "An API is available for autonomous deployment and management of your services."],
-      ["Metrics — max resolution", ["1h","15m","1m"], "View your metrics with improved granularity."],
-      ["Metrics — history retained", ["6h","24h","30d"], "View an increasingly long history of metrics for your services."],
-      ["Log export", ["no","no","yes"], "Export your logs and metrics."],
-    ]},
-    { title: "Support", rows: [
-      ["Documentation", ["yes","yes","yes"]],
-      ["Ticket support", ["no","yes","yes"]],
-      ["Response time", ["—","16h","4h"], "During business hours and business days."],
-      ["Chat support", ["no","no","Per quote"]],
-    ]},
-  ],
-},
-
-  // ---------------------------------------------------------
   {
     id: "enterprise",
     name: "Varnish Enterprise",
@@ -523,13 +500,13 @@ const PRODUCTS = [
         name: "Free Trial", badge: "trial", price: "$0", period: "30-day Enterprise trial",
         desc: "Full Enterprise feature set, unlocked for technical evaluation.",
         bullets: ["Try with your use case", "Deploy instantly", "Enterprise features enabled", "No commitment", "AWS Free Tier-eligible (up to 750 hrs/mo)", { sub: "Best for" }, "Technical evaluation"],
-        cta: { label: "Start free", style: "ghost", href: "#" }
+        cta: { label: "Start free", style: "ghost", href: "https://info.varnish-software.com/varnish-enterprise-free-trial" }
       },
       {
         name: "Varnish Enterprise", badge: "paid", price: "Contact us", period: "Request a quote", featured: true,
         desc: "Premium software with 24/7 support.",
         bullets: ["Massive Storage Engine", "High availability", "Compute on the edge", "45+ pluggable modules", "24/7 global support", "Implementation services", { sub: "Best for" }, "Enterprises & service providers"],
-        cta: { label: "Request a quote", style: "primary", href: "#" }
+        cta: { label: "Request a quote", style: "primary", href: "https://www.varnish-software.com/talk-to-an-expert/" }
       }
     ],
     featureGroups: [
@@ -590,8 +567,6 @@ const PRODUCTS = [
     ],
     footnote: "Feature list reflects the Varnish Enterprise product; trial unlocks the same features for 30 days."
   },
-
- // ---------------------------------------------------------
   {
     id: "open-source",
     name: "Open Source",
@@ -621,10 +596,6 @@ const PRODUCTS = [
   },
 ];
 
-
-/* ============================================================
-   RENDER HELPERS
-   ============================================================ */
 const tabbar = document.getElementById('tabbar');
 const main = document.getElementById('main');
 
@@ -653,8 +624,11 @@ function renderTierCard(t){
   const classes = ['tier-card'];
   if (t.featured) classes.push('featured');
 
+  const BADGE_LABELS = { trial: 'Free trial', free: 'Free', paid: 'Paid' };
+  const badgeLabel = BADGE_LABELS[t.badge] || t.badge;
+  const badgeClass = ['trial', 'free', 'paid'].includes(t.badge) ? t.badge : 'custom';
   const badgeHTML = t.badge
-    ? `<span class="badge ${['trial','free','paid'].includes(t.badge) ? t.badge : 'custom'}">${{trial:'Free trial', free:'Free', paid:'Paid'}[t.badge] || t.badge}</span>`
+    ? `<span class="badge ${badgeClass}">${badgeLabel}</span>`
     : `<span class="skel" style="width:64px;height:18px;border-radius:100px;margin-bottom:14px;"></span>`;
 
   const nameHTML = t.name
@@ -679,9 +653,6 @@ function renderTierCard(t){
         : `<a class="cta ${t.cta.style}" href="${t.cta.href || '#'}" target="${t.cta.href && t.cta.href !== '#' ? '_blank' : '_self'}" rel="noopener">${t.cta.label}</a>`)
     : `<div class="cta" style="padding:0;margin-bottom:18px;">${skelLine('100%', '38px')}</div>`;
 
-  /* Marketplace availability: an extensible list of listings (AWS today,
-     Azure/GCP later). Each entry is {name, href}; adding a marketplace is
-     one array entry, no layout change. */
   const mktHTML = (t.marketplaces && t.marketplaces.length)
     ? `<div class="mkt-row"><span class="mkt-label">Available on</span>${
         t.marketplaces.map(m => `<a class="mkt-pill" href="${m.href}" target="_blank" rel="noopener">${m.name}<span class="ext">↗</span></a>`).join('')
@@ -700,9 +671,6 @@ function renderTierCard(t){
     ).join('') + '</ul>';
   }
 
-  /* CTA sits right after price/desc, before the (variable-length) bullet
-     list, so every card's button lands in the same band and is visible
-     without scrolling past a long feature list first. */
   return `<div class="${classes.join(' ')}">
     ${badgeHTML}
     ${nameHTML}
@@ -742,9 +710,6 @@ function renderPartnerBanner(b){
   </div>`;
 }
 
-/* ============================================================
-   BUILD PAGE
-   ============================================================ */
 PRODUCTS.forEach((p, idx) => {
   const tab = document.createElement('a');
   tab.className = 'tab' + (idx === 0 ? ' active' : '');
@@ -766,7 +731,6 @@ PRODUCTS.forEach((p, idx) => {
       <h2>${p.name}</h2>
       <p class="tagline">${p.tagline}</p>
       ${p.source ? `<div class="source-note"><a href="${p.source}" target="_blank" rel="noopener">Product page →</a></div>` : ''}
-      <div class="anchor-note">Direct link: <button type="button" class="copy-link" data-id="${p.id}">#${p.id}</button></div>
     </div>
   `;
 
@@ -812,31 +776,12 @@ function selectProduct(id, updateHash){
   document.querySelectorAll('.tab').forEach(t => t.classList.toggle('active', t.dataset.id === id));
   document.querySelectorAll('.product-panel').forEach(p => p.classList.toggle('active', p.id === id));
   if (updateHash && history.pushState) {
-    /* Sandboxed previews (about:srcdoc iframes) forbid pushState and throw a
-       SecurityError. The tab switch above has already happened, so if the URL
-       can't be updated we just skip it rather than surfacing an error. */
     try {
       history.pushState(null, '', '#' + id);
-    } catch (e) { /* no-op: URL hash unavailable in this context */ }
+    } catch (e) { /* no-op */ }
   }
 }
 
-/* Copy-link buttons next to each product heading */
-main.addEventListener('click', (e) => {
-  const btn = e.target.closest('.copy-link');
-  if (!btn) return;
-  const url = window.location.href.split('#')[0] + '#' + btn.dataset.id;
-  if (navigator.clipboard) {
-    navigator.clipboard.writeText(url).then(() => {
-      const original = btn.textContent;
-      btn.textContent = 'Copied!';
-      setTimeout(() => { btn.textContent = original; }, 1200);
-    });
-  }
-});
-
-/* Open the product matching the URL hash on load, and respond to
-   back/forward navigation or a hash typed/pasted directly. */
 function openFromHash(){
   const id = window.location.hash.replace('#', '');
   if (id && PRODUCTS.some(p => p.id === id)) {
